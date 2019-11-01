@@ -31,4 +31,5 @@ class OffsetTest < Minitest::Test
       "D" => 1
     }
     assert_equal expected, @offset.set_offset
+  end
 end
