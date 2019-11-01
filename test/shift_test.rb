@@ -10,7 +10,7 @@ def ShiftTest < Minitest::Test
     assert_instance_of Shift, @shift
   end
 
-  def test_it_initializes
-    
+  def test_it_generates_a_random_five_digit_number
+    assert_equal 5, @shift.random_key.length
   end
 end
