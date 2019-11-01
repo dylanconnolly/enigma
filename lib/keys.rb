@@ -12,12 +12,12 @@ class Keys
   end
 
   def set_keys
-    element_array = @number.split("")
+    number_array = @number.split("")
     @keys = {
-      "A" => (element_array[0] + element_array[1]).to_i,
-      "B" => (element_array[1] + element_array[2]).to_i,
-      "C" => (element_array[2] + element_array[3]).to_i,
-      "D" => (element_array[3] + element_array[4]).to_i
+      "A" => (number_array[0] + number_array[1]).to_i,
+      "B" => (number_array[1] + number_array[2]).to_i,
+      "C" => (number_array[2] + number_array[3]).to_i,
+      "D" => (number_array[3] + number_array[4]).to_i
     }
   end
 end
