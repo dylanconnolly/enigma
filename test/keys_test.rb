@@ -1,4 +1,5 @@
-require './test/test_help'
+require './test/test_helper'
+require './lib/keys'
 
 class KeysTest < Minitest::Test
 
@@ -8,5 +9,25 @@ class KeysTest < Minitest::Test
 
   def test_it_exists
     assert_instance_of Keys, @keys
+  end
+
+  def test_it_initializes_with_hash_of_keys
+    expected = {
+      "A" => nil,
+      "B" => nil,
+      "C" => nil,
+      "D" => nil
+    }
+    assert_equal expected, @keys.keys
+  end
+
+  def test_set_keys
+    expected = {
+      "A" => 12,
+      "B" => 23,
+      "C" => 34,
+      "D" => 45
+    }
+    assert_equal expected, @keys.set_keys
   end
 end
