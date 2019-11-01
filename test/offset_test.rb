@@ -18,4 +18,18 @@ class OffsetTest < Minitest::Test
   def test_it_can_square_the_date
     assert_equal 119_224_561, @offset.square_date
   end
+
+  def test_it_can_get_last_four_digits_of_squared_date
+    assert_equal ["4","5","6","1"], @offset.last_four
+  end
+
+  def test_set_offset
+    expected = {
+      "A" => 4,
+      "B" => 5,
+      "C" => 6,
+      "D" => 1
+    }
+    assert_equal expected, @offset.set_offset
+  end
 end
