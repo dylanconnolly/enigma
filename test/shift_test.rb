@@ -11,6 +11,11 @@ class ShiftTest < Minitest::Test
     assert_instance_of Shift, @shift
   end
 
+  def test_it_initializes_with_alphabet_array
+    expected = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
+    assert_equal expected, @shift.alphabet
+  end
+
   def test_it_generates_a_random_five_digit_number
     assert_equal 5, @shift.random_key.length
   end
