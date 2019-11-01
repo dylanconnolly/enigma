@@ -1,8 +1,8 @@
 class Keys
   attr_reader :keys
 
-  def initialize(rand_number = '%05d' % rand(99999))
-    @random_number = rand_number
+  def initialize(number = '%05d' % rand(99999))
+    @number = number
     @keys = {
       "A" => nil,
       "B" => nil,
@@ -12,7 +12,7 @@ class Keys
   end
 
   def set_keys
-    element_array = @random_number.split("")
+    element_array = @number.split("")
     @keys = {
       "A" => (element_array[0] + element_array[1]).to_i,
       "B" => (element_array[1] + element_array[2]).to_i,
