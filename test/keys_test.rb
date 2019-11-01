@@ -1,4 +1,4 @@
-require './test/test_help'
+require './test/test_helper'
 require './lib/keys'
 
 class KeysTest < Minitest::Test
@@ -19,4 +19,14 @@ class KeysTest < Minitest::Test
       "D" => 0
     }
     assert_equal expected, @keys.keys
+  end
+
+  def test_set_keys
+    expected = {
+      "A" => 12,
+      "B" => 23,
+      "C" => 34,
+      "D" => 45
+    }
+    assert_equal expected, @keys.set_keys
 end
