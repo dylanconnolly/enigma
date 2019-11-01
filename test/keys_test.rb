@@ -13,10 +13,10 @@ class KeysTest < Minitest::Test
 
   def test_it_initializes_with_hash_of_keys
     expected = {
-      "A" => 0,
-      "B" => 0,
-      "C" => 0,
-      "D" => 0
+      "A" => nil,
+      "B" => nil,
+      "C" => nil,
+      "D" => nil
     }
     assert_equal expected, @keys.keys
   end
@@ -29,4 +29,5 @@ class KeysTest < Minitest::Test
       "D" => 45
     }
     assert_equal expected, @keys.set_keys
+  end
 end
