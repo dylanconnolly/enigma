@@ -1,4 +1,4 @@
-class Keys
+class KeyGenerator
   attr_reader :keys
 
   def initialize(number = '%05d' % rand(99999))
