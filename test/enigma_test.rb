@@ -53,4 +53,12 @@ class EnigmaTest < Minitest::Test
 
     assert_equal expected, @enigma.decrypt("vjqtbeaweqihssi", "08304", "291018")
   end
+
+  def test_rotate_method
+    shift = @enigma.apply_shift("08304", "291018")
+
+    assert_equal ["v","j","q","t","b","e","a","w","e","q","i","h","s","s","i"] , @enigma.rotate("hello world end", shift)
+
+    assert_equal "hello world end", @enigma.rotate("vjqtbeaweqihssi", shift, "backward").join
+  end
 end
