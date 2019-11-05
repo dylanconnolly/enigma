@@ -14,6 +14,17 @@ class EnigmaTest < Minitest::Test
     assert_instance_of Enigma, @enigma
   end
 
+  def test_encrypt_properly_sets_shift
+    expected = {
+      "A" => 8 + 6,
+      "B" => 83 + 3,
+      "C" => 30 + 2,
+      "D" => 4 + 4
+    }
+
+    assert_equal expected, @enigma.apply_shift("08304", "291018")
+  end
+
   def test_encrypt
     expected =  {
       encryption: "vjqtbeaweqihssi",
