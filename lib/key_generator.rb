@@ -11,8 +11,8 @@ class KeyGenerator
     }
   end
 
-  def set_keys
-    number_array = @number.split("")
+  def self.set_keys(number = '%05d' % rand(99999))
+    number_array = number.split("")
     @keys = {
       "A" => (number_array[0] + number_array[1]).to_i,
       "B" => (number_array[1] + number_array[2]).to_i,
