@@ -5,7 +5,7 @@ class Enigma
     @alphabet = ("a".."z").to_a << " "
   end
 
-  def encrypt(message, key = '%05d' % rand(99999), date)
+  def encrypt(message, key = '%05d' % rand(99999), date = Time.now.strftime("%d%m%y"))
     shift = apply_shift(key, date)
 
     encrypted = message.chars.map.with_index do |character, index|
