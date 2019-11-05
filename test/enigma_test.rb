@@ -31,7 +31,6 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_encrypt
-
     expected =  {
       encryption: "vjqtbeaweqihssi",
       key: "08304",
