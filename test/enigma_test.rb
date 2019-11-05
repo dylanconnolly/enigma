@@ -16,7 +16,7 @@ class EnigmaTest < Minitest::Test
 
   def test_it_initializes_with_characters_a_to_z_and_space
     assert_equal ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "],
-    @enigma.characters
+    @enigma.alphabet
   end
 
   def test_encrypt_properly_sets_shift
@@ -31,6 +31,7 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_encrypt
+
     expected =  {
       encryption: "vjqtbeaweqihssi",
       key: "08304",
