@@ -1,7 +1,7 @@
 require './test/test_helper'
 require './lib/shift'
-require './lib/keys'
-require './lib/offset'
+require './lib/key_generator'
+require './lib/offset_generator'
 
 class ShiftTest < Minitest::Test
 
@@ -19,8 +19,8 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_can_set_shift_by_combining_keys_and_offet
-    keys = Keys.new("12345")
-    offset = Offset.new("010919")
+    keys = KeyGenerator.new("12345")
+    offset = OffsetGenerator.new("010919")
 
     expected = {
       "A" => 16,
