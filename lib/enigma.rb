@@ -11,6 +11,7 @@ class Enigma
     encrypted = rotate(message, shift)
     
 
+
     # encrypted = message.chars.map.with_index do |character, index|
     #   position = @alphabet.index(character)
     #   if position == nil
@@ -41,24 +42,26 @@ class Enigma
   def decrypt(message, key, date)
     shift = apply_shift(key, date)
 
-    decrypted = message.chars.map.with_index do |character, index|
-      position = @alphabet.index(character)
-      if position == nil
-        character
-      elsif index % 4 == 0
-        new_alpha = @alphabet.rotate(-(shift["A"] % 27))
-        new_alpha[position]
-      elsif index % 4 == 1
-        new_alpha = @alphabet.rotate(-(shift["B"] % 27))
-        new_alpha[position]
-      elsif index % 4 == 2
-        new_alpha = @alphabet.rotate(-(shift["C"] % 27))
-        new_alpha[position]
-      elsif index % 4 == 3
-        new_alpha = @alphabet.rotate(-(shift["D"] % 27))
-        new_alpha[position]
-      end
-    end
+    decrypted = rotate(message, shift, "backward")
+
+    # decrypted = message.chars.map.with_index do |character, index|
+    #   position = @alphabet.index(character)
+    #   if position == nil
+    #     character
+    #   elsif index % 4 == 0
+    #     new_alpha = @alphabet.rotate(-(shift["A"] % 27))
+    #     new_alpha[position]
+    #   elsif index % 4 == 1
+    #     new_alpha = @alphabet.rotate(-(shift["B"] % 27))
+    #     new_alpha[position]
+    #   elsif index % 4 == 2
+    #     new_alpha = @alphabet.rotate(-(shift["C"] % 27))
+    #     new_alpha[position]
+    #   elsif index % 4 == 3
+    #     new_alpha = @alphabet.rotate(-(shift["D"] % 27))
+    #     new_alpha[position]
+    #   end
+    # end
 
     output = {
       decryption: decrypted.join,
@@ -68,7 +71,14 @@ class Enigma
     output
   end
 
-  def rotate(message, shift)
+  def rotate(message, shift, direction = "forward")
+    if direction == "backward"
+      inverse_values = {}
+      shift.each do |key, value|
+        inverse_values[key] = -value
+      end
+      shift = inverse_values
+    end
     message.chars.map.with_index do |character, index|
       position = @alphabet.index(character)
       if position == nil
