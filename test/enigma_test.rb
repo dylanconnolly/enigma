@@ -41,4 +41,8 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, @enigma.encrypt("hello world end", "08304", "291018")
   end
 
+  def test_it_can_generate_todays_date
+    assert_equal "051119", @enigma.encrypt("my name is dylan")[:date]
+  end
+
 end
