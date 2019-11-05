@@ -11,6 +11,5 @@ class KeyGeneratorTest < Minitest::Test
       "D" => 45
     }
     assert_equal expected, KeyGenerator.set_keys("12345")
-    require "pry"; binding.pry
   end
 end
