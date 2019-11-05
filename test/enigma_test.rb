@@ -14,6 +14,11 @@ class EnigmaTest < Minitest::Test
     assert_instance_of Enigma, @enigma
   end
 
+  def test_it_initializes_with_characters_a_to_z_and_space
+    assert_equal ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "],
+    @enigma.characters
+  end
+
   def test_encrypt_properly_sets_shift
     expected = {
       "A" => 8 + 6,
