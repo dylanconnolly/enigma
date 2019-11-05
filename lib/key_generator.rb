@@ -1,15 +1,4 @@
 class KeyGenerator
-  attr_reader :keys
-
-  def initialize(number = '%05d' % rand(99999))
-    @number = number
-    @keys = {
-      "A" => nil,
-      "B" => nil,
-      "C" => nil,
-      "D" => nil
-    }
-  end
 
   def self.set_keys(number = '%05d' % rand(99999))
     number_array = number.split("")
