@@ -1,7 +1,7 @@
 require './test/test_helper'
 require './lib/key_generator'
 
-class KeysTest < Minitest::Test
+class KeyGeneratorTest < Minitest::Test
 
   def test_set_keys
     expected = {
