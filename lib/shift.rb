@@ -1,11 +1,6 @@
 class Shift
-  attr_reader :alphabet
 
-  def initialize
-    @alphabet = ("a".."z").to_a << " "
-  end
-
-  def set_shift(key, offset)
+  def self.set_shift(key, offset)
     shift = {
       "A" => key["A"] + offset["A"],
       "B" => key["B"] + offset["B"],
