@@ -1,25 +1,7 @@
 require './test/test_helper'
 require './lib/key_generator'
 
-class KeysTest < Minitest::Test
-
-  def setup
-    @key_generator = KeyGenerator.new("12345")
-  end
-
-  def test_it_exists
-    assert_instance_of KeyGenerator, @key_generator
-  end
-
-  def test_it_initializes_with_hash_of_keys
-    expected = {
-      "A" => nil,
-      "B" => nil,
-      "C" => nil,
-      "D" => nil
-    }
-    assert_equal expected, @key_generator.keys
-  end
+class KeyGeneratorTest < Minitest::Test
 
   def test_set_keys
     expected = {
@@ -28,6 +10,6 @@ class KeysTest < Minitest::Test
       "C" => 34,
       "D" => 45
     }
-    assert_equal expected, @key_generator.set_keys
+    assert_equal expected, KeyGenerator.set_keys("12345")
   end
 end

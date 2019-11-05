@@ -19,8 +19,8 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_can_set_shift_by_combining_keys_and_offet
-    keys = KeyGenerator.new("12345")
-    offset = OffsetGenerator.new("010919")
+    keys = KeyGenerator.set_keys("12345")
+    offset = OffsetGenerator.set_offset("010919")
 
     expected = {
       "A" => 16,
@@ -28,6 +28,6 @@ class ShiftTest < Minitest::Test
       "C" => 40,
       "D" => 46
     }
-    assert_equal expected, @shift.set_shift(keys.set_keys, offset.set_offset)
+    assert_equal expected, @shift.set_shift(keys, offset)
   end
 end
