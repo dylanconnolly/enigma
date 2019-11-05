@@ -18,7 +18,7 @@ class ShiftTest < Minitest::Test
     assert_equal expected, @shift.alphabet
   end
 
-  def test_it_can_set_shift_values
+  def test_it_can_set_shift_by_combining_keys_and_offet
     keys = Keys.new("12345")
     offset = Offset.new("010919")
 
