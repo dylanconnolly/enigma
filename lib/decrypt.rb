@@ -9,10 +9,10 @@ file.close
 
 enigma = Enigma.new
 
-encryption = enigma.encrypt(message)
+decryption = enigma.decrypt(message, ARGV[2], ARGV[3])
 
 new_file = File.open(ARGV[1], "w")
-new_file.write(encryption[:encryption])
+new_file.write(decryption[:decryption])
 new_file.close
 
-puts "Created '#{ARGV[1]}' with the key #{encryption[:key]} and date #{encryption[:date]}."
+puts "Created '#{ARGV[1]}' with the key #{ARGV[2]} and date #{ARGV[3]}."
