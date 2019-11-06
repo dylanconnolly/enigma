@@ -1,1 +1,3 @@
-Enigma project Mod 1
+## Enigma project Mod 1
+
+Based on the rubric, I would say I have completed built functionality that meets expections (3). I would say my demonstration of Object Oriented Programming is somewhere between a 3 and a 2, I could have broken things into modules or shortened some of my methods. I would put myself at a 3 for TDD since I wrote tests firsts and then the functionality and my git history supports this. I would put my Version Control somewhere between a 3 and a 4 as I committed frequently and should have each commit only contain a single piece of functionality. I also used branches 10+ branches when developing new functionality and 10+ pull requests. Overall I'd evaluate myself at a 3, meeting expectations.
