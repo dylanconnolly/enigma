@@ -10,12 +10,7 @@ class Enigma
 
     encrypted = rotate(message, shift)
 
-    output = {
-      encryption: encrypted.join,
-      key: key,
-      date: date
-    }
-    output
+    output = {encryption: encrypted.join, key: key, date: date}
   end
 
   def decrypt(message, key, date)
@@ -23,12 +18,7 @@ class Enigma
 
     decrypted = rotate(message, shift, "backward")
 
-    output = {
-      decryption: decrypted.join,
-      key: key,
-      date: date
-    }
-    output
+    output = {decryption: decrypted.join, key: key, date: date}
   end
 
   def rotate(message, shift, direction = "forward")
@@ -62,6 +52,5 @@ class Enigma
   def apply_shift(key, date)
     Shift.set_shift(KeyGenerator.set_keys(key), OffsetGenerator.set_offset(date))
   end
-
 
 end
